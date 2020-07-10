@@ -17,6 +17,7 @@ def find_underpaid_customers(path):
         words = line.split('|')
         #item is created by split string when "|" is located in line
 
+        list_number = words[0]
         customer_name = words[1]
         customer_melons = float(words[2])
         customer_paid = float(words[3])
@@ -25,6 +26,7 @@ def find_underpaid_customers(path):
         customer_expected = customer_melons * melon_cost
         if customer_expected > customer_paid:
           print("Customer: {}".format(customer_name))
+          print("List #: {}".format(list_number))
           print("Expected Pay: ${}".format(customer_melons))
           print("Paid: ${}".format(customer_paid))
           print()
