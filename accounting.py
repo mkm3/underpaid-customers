@@ -1,12 +1,13 @@
 def find_underpaid_customers(path):
     """ Identify which customers underpaid """
 
+    print()
+    print("UNDERPAID CUSTOMER LIST:")
+    print()
+
     the_file = open(path)
     # assigning variable to our open function, passing through produce report (path)
     melon_cost = 1.00
-
-    print("UNDERPAID CUSTOMER LIST:")
-    print()
 
     for line in the_file:
     # iterating through each line of the produce report
@@ -24,7 +25,10 @@ def find_underpaid_customers(path):
         #variables for our print statement below
 
         customer_expected = customer_melons * melon_cost
+        #calculating the expected price for the total bill
         if customer_expected > customer_paid:
+        #use if statement to get evaluate whether cust_expected is greater that cust_paid
+        #if greater, print customer info
           print("Customer: {}".format(customer_name))
           print("List #: {}".format(list_number))
           print("Expected Pay: ${}".format(customer_melons))
